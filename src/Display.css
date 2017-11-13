@@ -1,0 +1,11 @@
+.Display {
+  height: 80px;
+  width: 100%;
+}
+
+.Display-input {
+  font-size: 3em;
+  width: 100%;
+  text-indent: 8px;
+  text-align: right;
+}
