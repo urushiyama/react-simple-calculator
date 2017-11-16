@@ -12,6 +12,21 @@ class App extends Component {
       inputDemical: false,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleDisplayChange = this.handleDisplayChange.bind(this);
+  }
+  
+  handleDisplayChange(event) {
+    let newValueAsString = event.target.value;
+    if (/^([0-9]|[1-9][0-9]+)(\.[0-9]*)?$/.test(newValueAsString)) {
+      let newValue = Number.parseFloat(newValueAsString);
+      let newInputDemical = /^[1-9]?[0-9]*\.[0-9]*$/.test(newValueAsString);
+      console.log('new value: '+newValue);
+      this.setState({
+        value: newValue,
+        valueAsString: newValueAsString,
+        inputDemical: newInputDemical,
+      });
+    }
   }
   
   handleClick(label) {
@@ -57,7 +72,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
       <div className="App">
-        <Display value={value}></Display>
+        <Display value={value} onChange={this.handleDisplayChange}></Display>
         <ControlPanel onClick={this.handleClick}/>
       </div>
     </MuiThemeProvider>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField'
-import './Display.css';
 
 class Display extends Component {
   render() {
@@ -10,12 +9,11 @@ class Display extends Component {
           className="Display-input"
           id="Display-input"
           type="text"
-          disabled={true}
           value={this.props.value}
-          inputStyle={{textAlign: 'right', color: 'black'}}
-          hintStyle={{textAlign: 'right', width: '100%'}}
-          floatingLabelStyle={{ textAlign: 'center', width: '100%', transformOrigin: 'center top 0px' }}
-          fullWidth={true} />
+          inputStyle={{textAlign: 'right'}}
+          fullWidth={true}
+          onChange={this.props.onChange}
+        />
       </div>
     );
   }
