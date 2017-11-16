@@ -21,6 +21,9 @@ class App extends Component {
     switch (true) {
       case /^00$/.test(label):
         console.log('input two 00');
+        if (this.state.valueAsString !== '0') {
+          newValueAsString += '00';
+        }
         break;
       case /^\.$/.test(label):
         console.log('into decimal input mode');
